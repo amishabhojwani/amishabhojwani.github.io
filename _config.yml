@@ -6,11 +6,11 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-UK"
+locale                   : "en-GB"
 title                    : "Amisha Bhojwani"
 title_separator          : "-"
-name                     : &name "Amisha"
-description              : &description "Your local data and ecology nerd."
+name                     : &name "Amisha Bhojwani"
+description              : &description "Data Science trainee at Digital Futures"
 url                      : https://amishabhojwani.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "amishabhojwani/amishabhojwani.github.io"
@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Amisha"
+  name             : "Amisha Bhojwani"
   avatar           : "profile.png"
   bio              : "Your local data and ecology nerd."
   location         : "Barcelona, Spain"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=EHW-PPMAAAAJ&hl=en&oi=ao"
-  email            : "amishabhojwani@gmail.com"
+  email            : amishabhojwani[at]gmail[dot]com
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -106,10 +106,10 @@ author:
   orcid            : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : "https://stackexchange.com/users/23979059/amisha-bhojwani"
+  stackoverflow    : #"https://stackexchange.com/users/23979059/amisha-bhojwani"
   steam            :
   tumblr           :
-  twitter          : "amishabhojwani"
+  twitter          : amishabhojwani
   vine             :
   weibo            :
   xing             :
