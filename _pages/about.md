@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,7 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-# About me
 ## 📚 Goals
 
 I’m a quantitative environmental biologist who has completed multiple research projects where I demonstrate my ability to wrangle, manage, analyse and visualise complex data. I am now looking to move into a data driven career and improve these skills in a business environment. 
