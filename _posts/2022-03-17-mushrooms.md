@@ -14,7 +14,7 @@ In this blogpost I use a popular kaggle dataset of mushroom traits to build clas
 
 Picture this: it has been raining all week and you finally get the perfect weekend to go mushroom foraging. Your mushrooming skills aren't great, but you really want some fresh mushrooms to make a decadent mushroom risotto. The trouble is, will you pick the right mushrooms?
 
-![A purple mushroom](post_images/purple_mushy.jpg 'A purple mushroom')
+![A purple mushroom](/images/purple_mushy.jpg 'A purple mushroom')
 
 Let's try and train a model to pick the poisonous mushrooms out for us. We don't trust our mushroom judgement. We can work with this dataset from Kaggle [[1](https://www.kaggle.com/datasets/uciml/mushroom-classification)], describing 23 mushroom species from the Lepiota and Agaricus families. 
 
@@ -31,7 +31,15 @@ import matplotlib.pyplot as plt
 
 Our dataset is labelled, meaning we know if the recorded mushrooms are poisonous or edible. Here's a sneak peak of the data:
 
-![Head of dataset](post_images/mushies_head.jpg 'Head of dataset')
+![Head of dataset](/amishabhojwani.github.io/_posts/post_images/mushies_head.jpg 'Head of dataset')
+
+|    |class|cap-shape|cap-surface|cap-color|bruises|odor|gill-attachment|gill-spacing|gill-size|gill-color|stalk-shape|stalk-root|stalk-surface-above-ring|stalk-surface-below-ring|stalk-color-above-ring|stalk-color-below-ring|veil-type|veil-color|ring-number|ring-type|spore-print-color|population|habitat|
+|----|-----|---------|-----------|---------|-------|----|---------------|------------|---------|----------|-----------|----------|------------------------|------------------------|----------------------|----------------------|---------|----------|-----------|---------|-----------------|----------|-------|
+|0   |p    |x        |s          |n        |t      |p   |f              |c           |n        |k         |e          |e         |s                       |s                       |w                     |w                     |p        |w         |o          |p        |k                |s         |u      |
+|1   |e    |x        |s          |y        |t      |a   |f              |c           |b        |k         |e          |c         |s                       |s                       |w                     |w                     |p        |w         |o          |p        |n                |n         |g      |
+|2   |e    |b        |s          |w        |t      |l   |f              |c           |b        |n         |e          |c         |s                       |s                       |w                     |w                     |p        |w         |o          |p        |n                |n         |m      |
+|3   |p    |x        |y          |w        |t      |p   |f              |c           |n        |n         |e          |e         |s                       |s                       |w                     |w                     |p        |w         |o          |p        |k                |s         |u      |
+|4   |e    |x        |s          |g        |f      |n   |f              |w           |b        |k         |t          |e         |s                       |s                       |w                     |w                     |p        |w         |o          |e        |n                |a         |g      |
 
 This looks a bit messy. After cleaning up labels by matching them to the data dictionary, we're able to understand the data better. For example, the first column is class with labels 'p' and 'e' standing for 'poisonous' and 'edible' respectively, as seen in the data dictionary on Kaggle. Matching these labels with their value in the dictionary for every column helps us with exploring the data visually. Let's create some plots to look at each mushroom trait by class:
 
