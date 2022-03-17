@@ -1,7 +1,7 @@
 ---
 title: 'Mushrooms are fun (but deadly)'
 date: 2022-03-17
-permalink: /posts/mushrooms
+permalink: /posts/poisonous_mushrooms
 tags:
   - kaggle
   - machine learning
