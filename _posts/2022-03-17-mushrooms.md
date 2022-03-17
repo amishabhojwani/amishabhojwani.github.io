@@ -8,11 +8,13 @@ tags:
   - one hot encoding
 ---
 
+In this blogpost I use a popular kaggle dataset of mushroom traits to build class predictive models to determine if a mushroom is poisonous or edible.
+
 ## Setting the scene
 
 Picture this: it has been raining all week and you finally get the perfect weekend to go mushroom foraging. Your mushrooming skills aren't great, but you really want some fresh mushrooms to make a decadent mushroom risotto. The trouble is, will you pick the right mushrooms?
 
-![A purple mushroom](../images/purple_mushy.jpg 'A purple mushroom')
+![A purple mushroom](post_images/purple_mushy.jpg 'A purple mushroom')
 
 Let's try and train a model to pick the poisonous mushrooms out for us. We don't trust our mushroom judgement. We can work with this dataset from Kaggle [[1](https://www.kaggle.com/datasets/uciml/mushroom-classification)], describing 23 mushroom species from the Lepiota and Agaricus families. 
 
@@ -29,11 +31,11 @@ import matplotlib.pyplot as plt
 
 Our dataset is labelled, meaning we know if the recorded mushrooms are poisonous or edible. Here's a sneak peak of the data:
 
-![Head of dataset](../images/mushies_head.jpg 'Head of dataset')
+![Head of dataset](post_images/mushies_head.jpg 'Head of dataset')
 
 This looks a bit messy. After cleaning up labels by matching them to the data dictionary, we're able to understand the data better. For example, the first column is class with labels 'p' and 'e' standing for 'poisonous' and 'edible' respectively, as seen in the data dictionary on Kaggle. Matching these labels with their value in the dictionary for every column helps us with exploring the data visually. Let's create some plots to look at each mushroom trait by class:
 
-![EDA](../images/EDA.jpg 'Exploratory data analysis')
+![EDA](post_images/EDA.jpg 'Exploratory data analysis')
 
 These are only some of the plots we can create, but they tell us some important things:
 
@@ -49,7 +51,7 @@ One peculiarity about this data is that for the stalk root trait, one of the pos
 
 Lets summarise the quality of our data so far:
 
-![Key statistics mushies](../images/mushies_keystats.jpg 'Key statistics in the data for modelling')
+![Key statistics mushies](post_images/mushies_keystats.jpg 'Key statistics in the data for modelling')
 
 Our data look very clean now, it may be time for some modelling!
 
@@ -110,7 +112,7 @@ One Hot Encoding (OHE) could create errors in some models if we aren't careful. 
 
 One of the OHE can say exactly the same thing as the other, only the numbers for the labels are reversed. This means the columns are dependent on each other, and they could be very correlated. We want features in our model not be multicollinear, but we do want them to correlate with our target. In this case both of these features correlate perfectly with each other (see the heatmap below), which means we must drop one.
 
-![OHE feature heatmap](../images/OHE_example.png 'Heatmap of OHE gill size')
+![OHE feature heatmap](post_images/ohe_example.png 'Heatmap of OHE gill size')
 
 Dropping one of the columns created for each feature is repeated for every feature when we do any OHE, except for when the models in question are working with Euclidean space. That get's a bit more tricky, but we can talk about that another day.
 
@@ -175,7 +177,7 @@ Um... It seems we have perfect scores! I am especially interested in recall beca
 
 From the evaluation metrics printed above, we know that this decision tree is reliable (completely 100% for some bizarre reason that we have absolutely identified). Let's have a look at what features are most useful in accurately predicting poisonous mushrooms in our `feat_imp` table:
 
-![Feature importances](../images/feature_imp.jpg 'Feature importances from a Decision Tree')
+![Feature importances](post_images/feature_imp.jpg 'Feature importances from a Decision Tree')
 
 The importances are calculated using a metric called Gini Impurity, which returns a normalised probability of misclassification for each variable (see documentation here [[2](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier.feature_importances_)]). Unsurprisingly, a lack of odor is a useful feature in the model (the most useful), and it holds over 60% of the predictve power in identifying poisonous mushrooms. We also see a few of the other features we thought would be interesting,  which means our EDA was very productive.
 
@@ -194,7 +196,7 @@ dt_important.fit(X_train_important, y_train_eng)
 
 I won't show you explicitly here again, but we get the exact same perfect evaluation scores output as our last model (with less features!). This is great, we can even see what these decisions look like now:
 
-![Decision Tree](../images/important_dt.png 'Decision Tree')
+![Decision Tree](post_images/important_dt.png 'Decision Tree')
 
 This means using this decision tree will tell us if a mushroom is poisonous after asking at most 9 questions about the mushroom traits, thats pretty good!
 
