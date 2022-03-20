@@ -11,30 +11,37 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* BSc in Environmental Biology, Autonomous University of Barcelona, 2015-2019
+* MSc in Computational Methods in Ecology and Evolution, Imperial College London, 2020-2021 
 
-Work experience
+Experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Salesperson, June 2015-August 2018
+  * Mayachi
+  * Duties included: curating window displays, wholesale sales, retail sales, customer relationship management, inventory management.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Spatial Ecological Modelling Research Internship, July-September 2019
+  * University of Aberdeen
+  * Duties included: Investigating modelling parameters which influence invading species dispersal success
+  * Supervisor: Professor Justin Travis
+
+* Graduate Teaching Assistant October 2021-January 2022
+  * Imperial College London
+  * Duties included: mentoring students during a coding bootcamp, answering curriculum related questions and scheduling weekly check-ins. 
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming and technologies
+  * Languages: R, Python, Bash, Powershell, PostgreSQL, SQL, Latex, Markdown, C, command line Git
+  * Tools: Jupyter Lab, pgAdmin, Tableau, High Performance Computing
+* Data Science
+  * Linear and non-linear statistical modelling
+  * Multivariate calculus
+  * Machine Learning methods like: LinReg, LogReg, KNN, KMeans, SVM, RF, Decision Trees, amongst others.
+  * Libraries: pandas, sklearn, statsmodels, keras, tensorflow
+* Languages
+  * Spoken and written: English, Spanish, Catalan and French
+  * Spoken: Hindi and Sindhi.
 
 Publications
 ======
@@ -42,18 +49,7 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Leadership
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Spanish Youth Ambassador for the Chirag Rural Development Foundation. Raised over 6,000€ with the team in Barcelona, organising events to raise money for the Project Chirag cause ([see more](https://projectchirag.org/)) both during and after the first lockdown in 2020.
+* Part of the Frontiers in Ecology and Evolution organisational committee in 2021.
