@@ -53,7 +53,7 @@ These are only some of the plots we can create, but they tell us a few important
 - Surface above and below stalk might be able to be differentiated between mushroom classes.
 - 'spore_print_colour' is quite differentiated between classes.
 
-One peculiarity about this data is that for the 'stalk_root' trait, one of the possible labels is: 'missing'. This is probably because it was not recorded for that mushroom, or because there was no stalk root present on the studied sample. We can impute these values with K-Nearest Neighbour clustering (look at my github repo for an example with this data).
+One peculiarity about this data is that for the 'stalk_root' trait, one of the possible labels is: 'missing'. This is probably because it was not recorded for that mushroom, or because there was no stalk root present on the studied sample. We can impute these values with K-Nearest Neighbour clustering (look at my [github repo](https://github.com/amishabhojwani/Poisonous_Mushroom_Prediction/blob/main/Code/imputing_nulls.ipynb) for an example with this data).
 
 Lets summarise the quality of our data so far:
 
@@ -205,7 +205,7 @@ Um... It seems we have perfect scores! I am especially interested in maximising 
 | Predicted Edible    | FN        | TN       |
 
 
-From the evaluation metrics printed above, we know that this decision tree is reliable (completely 100% for some bizarre reason that we have absolutely identified). Let's have a look at what features are most useful in accurately predicting poisonous mushrooms in our `feat_imp` table (code to extract this from a `DecisionTree` in my github repo for this project):
+From the evaluation metrics printed above, we know that this decision tree is reliable (completely 100% for some bizarre reason that we have absolutely identified). Let's have a look at what features are most useful in accurately predicting poisonous mushrooms in our `feat_imp` table (code to extract this from a `DecisionTree` in my [github repo](https://github.com/amishabhojwani/Poisonous_Mushroom_Prediction/blob/main/Code/Mushies_Demo.ipynb) for this project):
 
 |    |Feature                        |Gini_Importance|Summed_Importance|
 |----|-------------------------------|---------------|-----------------|
