@@ -274,6 +274,6 @@ def show_generator_images(img_generator):
 ```
 show_generator_images(train_gen)
 ```
-![Plot a batch of image arrays yielded from a generator](/images/image_data_gen_blogpost/first_pistachio.png 'A a batch of image arrays yielded from a generator').
+![Plot a batch of image arrays yielded from a generator](/images/image_data_gen_blogpost/gen_plot_pistachios.png 'A a batch of image arrays yielded from a generator').
 
 This method is slight slower than if we used a `tf.data.Dataset` approach, especially if we included image augmentation in the pipeline. Nevertheless, it is a good way to get to grips with image data and using it for deep learning. For an example project with this image data pipeline into modelling with Neural Networks, check my github repository for my [Whale and Dolphin Image Classification](https://github.com/amishabhojwani/Whale_And_Dolphin_Image_Classification) project.
