@@ -1,5 +1,5 @@
 ---
-title: 'Using images for modelling in Python'
+title: 'Image Data Pipelines in Python'
 date: 2022-05-06
 permalink: /posts/2022/05-images_in_python
 tags:
@@ -8,17 +8,17 @@ tags:
   - image processing
 ---
 
-In this blogpost I will present a possible pipeline approach that can be used to model with image data, using `ImageDataGenerator` objects from the `Keras` image preprocessing library (`TensorFlow` backend) in Python. Jay Acharya, Neil Molkenthein and I collaborated on this and presented it in a Digital Futures Deep Learning workshop.
+In this blogpost I will present a possible pipeline approach that can be used to model with image data, using `ImageDataGenerator` objects from the `Keras` image preprocessing library (`TensorFlow` backend) in `Python`. Jay Acharya, Neil Molkenthein and I collaborated on this and presented it in a Digital Futures Deep Learning workshop.
 
-# Working with Images
+## Working with Images
 
-Throughout this explanation I will assume that you, the readers, are familiar with path manipulation and management with libraries like `os`, `glob`, `pathlib`, amongst others. This will be very helpful in understanding how the methods I will detail are accessing images from directories where they are stored, to then translate them to Python objects that Matplotlib can plot as images.
+Throughout this explanation I will assume that you, the readers, are familiar with path manipulation and management with libraries like `os`, `glob`, `pathlib`, amongst others. This will be very helpful in understanding how the methods I will detail are accessing images from directories where they are stored, to then translate them to `Python` objects that Matplotlib can plot as images.
 
-## Speedy Computer Vision Recap
+### Speedy Computer Vision Recap
 
-A big part of starting to work with images in deep learning is understanding computer vision. As a brief summary, various libraries exist to read images into Python as NumPy arrays (`cv2` by `opencv`, `pillow`, `PIL`). The dimensions of these arrays depend on the colouring of the images. If the images are in full colour there will be 3 colour channels (RGB - red, green, blue), on the other hand, if the image is grayscale there will only be one colour channel (which is not to be confused with binary colouring, which is only black or white). Colour channels usually have values that range between 0-255. 
+A big part of starting to work with images in deep learning is understanding computer vision. As a brief summary, various libraries exist to read images into `Python` as NumPy arrays (`cv2` by `opencv`, `pillow`, `PIL`). The dimensions of these arrays depend on the colouring of the images. If the images are in full colour there will be 3 colour channels (RGB - red, green, blue), on the other hand, if the image is grayscale there will only be one colour channel (which is not to be confused with binary colouring, which is only black or white). Colour channels usually have values that range between 0-255. 
 
-In this blogpost we will work with [a Kaggle image dataset on two varieties of pistachios](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset). If we have an image with three colour channels, its array could have the following dimensions:
+In this blogpost we will work with a Kaggle image dataset on two varieties of pistachios [[1]](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset). If we have an image with three colour channels, its array could have the following dimensions:
 
 ```
 import cv2
@@ -43,19 +43,26 @@ plt.imshow(img)
 ```
 ![Our first pistachio plot](/images/image_data_gen_blogpost/first_pistachio.png 'A Kirmizi pistachio')
 
-Cool, now we have an idea of what Python understands an 'image' to be.
+Cool, now we have an idea of what `Python` understands an 'image' to be.
 
-# Current Directory Structure
-If we download the complete [pistachio dataset](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset) from Kaggle, we can see that the directory structure is as follows:
+## Current Directory Structure
+If we download the complete pistachio dataset [[2]](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset) from Kaggle, we can see that the directory structure is as follows:
 
 ```
+def print_tree(path):
+  '''
+  Given a path, print the directory structure and include the first 5 files in each directory
+  '''
+    for root, folders, files in os.walk(path):
+        directory_level = root.count(os.sep)  # os.sep returns the sepperator on your current opperating system (/ for linux or mac, \ for windows)
+        indent = "    " * directory_level
+        print(f"{indent}{os.path.basename(root)}{os.sep}")  # the os.path.basename selects the folder at the end of the "root" path to show
+        for file in files[:5]:
+            print(f"{indent}    {file}")
+    return
+
 data_dir = 'Pistachio_Image_Dataset'
-for root, folders, files in os.walk(data_dir):
-    directory_level = root.count(os.sep)  # os.sep returns the sepperator on your current opperating system (/ for linux or mac, \ for windows)
-    indent = "    " * directory_level
-    print(f"{indent}{os.path.basename(root)}{os.sep}")  # the os.path.basename selects the folder at the end of the "root" path to show
-    for file in files[:5]:
-        print(f"{indent}    {file}") # prints the first 5 files in a directory
+print_tree(data_dir)
 ```
 ```
 Pistachio_Image_Dataset\
@@ -94,9 +101,9 @@ With text or numeric data, we can store it in `Pandas` `DataFrame` objects and a
 
 If you're just starting out on working with images, loading a sample dataset that has smaller images and saving the image arrays in a list isn't a terrible idea, but it's not as efficient as other methods. These other methods rely on the `TensorFlow` library or libraries that have a `TensorFlow` backend (like `Keras`). Most of them rely on generators.
 
-# Generator functions
+## Generator functions
 
-Generators are yield information iteratively rather than return the final result of an iterative expression at the end of a function. They are objects than can be used in a for loop and are characterised for containing the `Python` keyword `yield`. Let's look at [a simple example](https://wiki.python.org/moin/Generators) of two functions that will build a list of a specified length:
+Generators yield information iteratively rather than return the final result of an iterative expression at the end of a function. They are objects than can be used in a for loop and are characterised for containing the `Python` keyword `yield`. Let's look at a simple example[[3]](https://wiki.python.org/moin/Generators) of two functions that will build a list of a specified length:
 
 ```
 # Function that returns a list of length n
@@ -109,15 +116,15 @@ def make_list(n):
     return nums
 
 # Generator function that yields a list of length n
-def make_list(n):
+def gen_list(n):
   '''Build a list generator'''
     num = 0
     while num < n:
         yield num
         num += 1
 
-a = first_n(1000)
-b = [i for i in firstn(1000)]
+a = make_list(1000)
+b = [i for i in gen_list(1000)]
 
 print(a == b)
 ```
@@ -125,18 +132,18 @@ print(a == b)
 True
 ```
 
-Both methods build lists that look like this: `[0, 1, 2, ..., 998, 999]`, however the generator function needs to be iterated over to achieve this result. Explicit invocation of the generator function will only show us the type of object it is. Iterating over the generator will allow us to avoid implicitly storing this list in memory, instead it can generate information for other functions with every iterative invocation. This is more efficient if we consider a list that is 10 times the size of the one in the example. We can now begin to understand why a generator approach could also be more efficient in the case of image arrays, which can also be considerably heavy.
+Both methods build lists that look like this: `[0, 1, 2, ..., 998, 999]`, however the generator function needs to be iterated over to achieve this result. Explicit invocation of the generator function will only show us the type of object it is. Looping over the generator will allow us to avoid storing this list in memory; instead it can generate information with every iterative invocation that can be used in real time by other functions. This is more efficient if we consider a list that is 10 times the size of the one in the example. We can now begin to understand why a generator approach could also be more efficient in the case of image arrays, which are also considerably heavy.
 
-# Image Data Generators
+## Image Data Generators
 
 We're here, it's time! How do we build an image data generator? As I previously said, there are various methods, which sometimes depend on the format of your data. The basic idea of them is: read the path to an image, process it as a  `NumPy` array and yield the processed image. There are two ways I've seen so far to achieve this pipeline:
 
-- Using `TensorFlow` dataset objects (`tf.data.Dataset`) ([see more](https://www.tensorflow.org/tutorials/load_data/images))
-- Using `Keras` `ImageDataGenerators`
+- Using `TensorFlow` dataset objects (`tf.data.Dataset`) [[4]](https://www.tensorflow.org/tutorials/load_data/images))
+- Using `Keras` `ImageDataGenerators` [[5]](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
 
-Although it is known that the first option is more efficient than the second (see [here](https://towardsdatascience.com/what-is-the-best-input-pipeline-to-train-image-classification-models-with-tf-keras-eb3fe26d3cc5) and [here](https://towardsdatascience.com/time-to-choose-tensorflow-data-over-imagedatagenerator-215e594f2435)), I will show an example with the second because it's more intuitive for a beginner working with image data.
+Although it is known that the first option is more efficient than the second [[6]](https://towardsdatascience.com/what-is-the-best-input-pipeline-to-train-image-classification-models-with-tf-keras-eb3fe26d3cc5) [[7]](https://towardsdatascience.com/time-to-choose-tensorflow-data-over-imagedatagenerator-215e594f2435)), I will show an example with the second because it's more intuitive for a beginner working with image data.
 
-To use the `Keras` `ImageDataGenerators` it will be more useful for our directories to have a train and test structure. To achieve this we can use the `splitfolders`  library:
+To use the `Keras` `ImageDataGenerator` it will be more useful for our directories to have a train and test structure. To achieve this, we can use the `splitfolders`  library:
 
 ```
 import splitfolders
@@ -187,7 +194,7 @@ Split_Pistachio_Dataset\
             siirt (2).jpg
 ```
 
-Great, now that we have a train and test split in our image data, we can have different generators for both these types of data. Here is a function that creates these generators alongside a validation data generator, which is useful in deep learning:
+Great, now that we have a train and test split in our image data, we can have different generators for both these types of data. Here is a function that creates these generators alongside a validation data generator, which is useful in deep learning [[8]](https://machinelearningmastery.com/difference-test-validation-datasets/):
 
 ```
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -233,7 +240,7 @@ def image_generator(train_parent_directory, test_parent_directory):
     return train_generator, val_generator, test_generator
 ```
 
-When we run this function we will have three `'keras.preprocessing.image.DirectoryIterator'` objects:
+When we run this function we will have three `'keras.preprocessing.image.DirectoryIterator'` objects, which is what the `ImageDataGenerator` returns:
 
 ```
 # Specify the path of training and testing directories
@@ -244,7 +251,7 @@ test_dir = 'Split_Pistachio_Dataset/val'
 train_gen, val_gen, test_gen = image_generator(train_dir, test_dir)
 ```
 
-But how do these generators work? And how do we access data from them before passing them on to a modelling function? Let's try and figure this out by plotting the images in each yielded batch of data. The most important method we will use is `.next()` which will give us the subsequent batch of images from the `ImageDataGenerator`. It returns two objects: the first is an array of image arrays, the second is the classes of each image array in the first object.
+But how do these generators work? And how do we access data from them before passing them on to a modelling function that will iterate through them? Let's try and figure this out by plotting the images in yield/batch of data. The most important method we will use is `.next()` which will give us the subsequent batch of images from the `ImageDataGenerator`. It returns two objects: the first is an array of image arrays, the second is the classes of each image array in the first object.
 
 ```
 def show_generator_images(img_generator):
@@ -276,4 +283,4 @@ show_generator_images(train_gen)
 ```
 ![Plot a batch of image arrays yielded from a generator](/images/image_data_gen_blogpost/gen_plot_pistachios.png 'A a batch of image arrays yielded from a generator').
 
-This method is slight slower than if we used a `tf.data.Dataset` approach, especially if we included image augmentation in the pipeline. Nevertheless, it is a good way to get to grips with image data and using it for deep learning. For an example project with this image data pipeline into modelling with Neural Networks, check my github repository for my [Whale and Dolphin Image Classification](https://github.com/amishabhojwani/Whale_And_Dolphin_Image_Classification) project.
+Hopefully this has helped you understand the necessity of data pipilines when modelling or working with images, and also one such approach on how to achieve it. This method is slight slower than if we used a `tf.data.Dataset` approach, especially if we included image augmentation in the pipeline. Nevertheless, it is a good way to get to grips with image data and using it for deep learning. For an example project with `ImageDataGenerator` used for modelling with Neural Networks, check out my github repository for my Whale and Dolphin Image Classification project [[9]](https://github.com/amishabhojwani/Whale_And_Dolphin_Image_Classification).
