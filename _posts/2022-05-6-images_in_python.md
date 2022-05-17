@@ -8,7 +8,7 @@ tags:
   - image processing
 ---
 
-In this blogpost I will present a possible pipeline approach that can be used to model with image data, using `ImageDataGenerator` objects from the `Keras` image preprocessing library (`TensorFlow` backend) in `Python`. Jay Acharya, Neil Molkenthein and I collaborated on this and presented it in a Digital Futures Deep Learning workshop.
+In this blogpost I will present a possible pipeline approach that can be used to model with image data, using `ImageDataGenerator` objects from the `Keras` image preprocessing library (`TensorFlow` backend) in `Python`. Jay Acharya, Neil Molkenthin and I collaborated on this and presented it in a Digital Futures Deep Learning workshop.
 
 ## Working with Images
 
@@ -16,7 +16,7 @@ Throughout this explanation I will assume that you, the readers, are familiar wi
 
 ### Speedy Computer Vision Recap
 
-A big part of starting to work with images in deep learning is understanding computer vision. As a brief summary, various libraries exist to read images into `Python` as NumPy arrays (`cv2` by `opencv`, `pillow`, `PIL`). The dimensions of these arrays depend on the colouring of the images. If the images are in full colour there will be 3 colour channels (RGB - red, green, blue), on the other hand, if the image is grayscale there will only be one colour channel (which is not to be confused with binary colouring, which is only black or white). Colour channels usually have values that range between 0-255. 
+A big part of starting to work with images in deep learning is understanding computer vision. As a brief summary, various libraries exist to read images into `Python` as `NumPy` arrays (`cv2` by `opencv`, `pillow`, `PIL`). The dimensions of these arrays depend on the colouring of the images. If the images are in full colour there will be 3 colour channels (RGB - red, green, blue), on the other hand, if the image is grayscale there will only be one colour channel (which is not to be confused with binary colouring, which is only black or white). Colour channels usually have values that range between 0-255. 
 
 In this blogpost we will work with a Kaggle image dataset on two varieties of pistachios [[1]](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset). If we have an image with three colour channels, its array could have the following dimensions:
 
@@ -46,7 +46,7 @@ plt.imshow(img)
 Cool, now we have an idea of what `Python` understands an 'image' to be.
 
 ## Current Directory Structure
-If we download the complete pistachio dataset [[2]](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset) from Kaggle, we can see that the directory structure is as follows:
+If we download the complete pistachio dataset [[1]](https://www.kaggle.com/datasets/muratkokludataset/pistachio-image-dataset) from Kaggle, we can see that the directory structure is as follows:
 
 ```
 def print_tree(path):
@@ -103,7 +103,7 @@ If you're just starting out on working with images, loading a sample dataset tha
 
 ## Generator functions
 
-Generators yield information iteratively rather than return the final result of an iterative expression at the end of a function. They are objects than can be used in a for loop and are characterised for containing the `Python` keyword `yield`. Let's look at a simple example[[3]](https://wiki.python.org/moin/Generators) of two functions that will build a list of a specified length:
+Generators yield information iteratively rather than return the final result of an iterative expression at the end of a function. They are objects than can be used in a for loop and are characterised for containing the `Python` keyword `yield`. Let's look at a simple example [[2]](https://wiki.python.org/moin/Generators) of two functions that will build a list of a specified length:
 
 ```
 # Function that returns a list of length n
@@ -138,10 +138,10 @@ Both methods build lists that look like this: `[0, 1, 2, ..., 998, 999]`, howeve
 
 We're here, it's time! How do we build an image data generator? As I previously said, there are various methods, which sometimes depend on the format of your data. The basic idea of them is: read the path to an image, process it as a  `NumPy` array and yield the processed image. There are two ways I've seen so far to achieve this pipeline:
 
-- Using `TensorFlow` dataset objects (`tf.data.Dataset`) [[4]](https://www.tensorflow.org/tutorials/load_data/images))
-- Using `Keras` `ImageDataGenerators` [[5]](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
+- Using `TensorFlow` dataset objects (`tf.data.Dataset`) [[3]](https://www.tensorflow.org/tutorials/load_data/images)
+- Using `Keras` `ImageDataGenerators` [[4]](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
 
-Although it is known that the first option is more efficient than the second [[6]](https://towardsdatascience.com/what-is-the-best-input-pipeline-to-train-image-classification-models-with-tf-keras-eb3fe26d3cc5) [[7]](https://towardsdatascience.com/time-to-choose-tensorflow-data-over-imagedatagenerator-215e594f2435)), I will show an example with the second because it's more intuitive for a beginner working with image data.
+Although it is known that the first option is more efficient than the second [[5]](https://towardsdatascience.com/what-is-the-best-input-pipeline-to-train-image-classification-models-with-tf-keras-eb3fe26d3cc5) [[6]](https://towardsdatascience.com/time-to-choose-tensorflow-data-over-imagedatagenerator-215e594f2435), I will show an example with the second because it's more intuitive for a beginner working with image data.
 
 To use the `Keras` `ImageDataGenerator` it will be more useful for our directories to have a train and test structure. To achieve this, we can use the `splitfolders`  library:
 
