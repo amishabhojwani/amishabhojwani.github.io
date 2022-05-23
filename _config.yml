@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-GB"
-title                    : "Amisha Bhojwani"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Amisha Bhojwani"
 description              : &description "Data Science trainee at Digital Futures"
