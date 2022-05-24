@@ -55,7 +55,7 @@ redirect_from:
 * Poisonous mushroom detection, February 2022, [GitHub](https://github.com/amishabhojwani/Poisonous_Mushroom_Prediction), [Blogpost](https://amishabhojwani.github.io/posts/2022/03-mushrooms)
   * If you’re foraging without a mushroom guide, I built class predictive models to indicate the edibility of a mushroom with full
   certainty, based on a minimum number of biological traits.
-* Model selection criteria, January 2021, GitHub
+* Model selection criteria, January 2021, [GitHub](https://github.com/amishabhojwani/Functional_Response_Modelling)
   * Given the discourse in academic literature, I analyse the boundaries of reliability for AIC and BIC as metrics for model selection between mechanistic and polynomial models.
 
 ## Publications
