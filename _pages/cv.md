@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "CV and Portfolio"
+permalink: /cv-and-portfolio/
 author_profile: true
 redirect_from:
   - /resume
@@ -12,6 +12,15 @@ redirect_from:
 ## Education
 * MSc in Computational Ecology and Statistics, Imperial College London, 2020-2021
 * BSc in Environmental Biology, Autonomous University of Barcelona, 2015-2019
+
+## Data Science Projects
+* Whale and dolphin image classification, March 2022, [GitHub](https://github.com/amishabhojwani/Whale_And_Dolphin_Image_Classification), [Blogpost](https://amishabhojwani.github.io/posts/2022/05-images_in_python)
+  * To automate processes in ecological research, I built a deep learning model that identifies whale and dolphin families with over 70% accuracy from images of dorsal fins.
+* Poisonous mushroom detection, February 2022, [GitHub](https://github.com/amishabhojwani/Poisonous_Mushroom_Prediction), [Blogpost](https://amishabhojwani.github.io/posts/2022/03-mushrooms)
+  * If you’re foraging without a mushroom guide, I built class predictive models to indicate the edibility of a mushroom with full
+  certainty, based on a minimum number of biological traits.
+* Model selection criteria, January 2021, [GitHub](https://github.com/amishabhojwani/Functional_Response_Modelling)
+  * Given the discourse in academic literature, I analyse the boundaries of reliability for AIC and BIC as metrics for model selection between mechanistic and polynomial models.
 
 ## Experience
 * Data Science Trainee, January 2022-Present
@@ -48,15 +57,6 @@ redirect_from:
 ## Leadership
 * Spanish Youth Ambassador for the Chirag Rural Development Foundation. Raised over 6,000€ with the team in Barcelona, organising events to raise money for the [Project Chirag](https://projectchirag.org/) cause both during and after the first lockdown in 2020.
 * Part of the Frontiers in Ecology and Evolution Symposium (2021) organisational committee at Silwood Park.
-
-## Projects
-* Whale and dolphin image classification, March 2022, [GitHub](https://github.com/amishabhojwani/Whale_And_Dolphin_Image_Classification), [Blogpost](https://amishabhojwani.github.io/posts/2022/05-images_in_python)
-  * To automate processes in ecological research, I built a deep learning model that identifies whale and dolphin families with over 70% accuracy from images of dorsal fins.
-* Poisonous mushroom detection, February 2022, [GitHub](https://github.com/amishabhojwani/Poisonous_Mushroom_Prediction), [Blogpost](https://amishabhojwani.github.io/posts/2022/03-mushrooms)
-  * If you’re foraging without a mushroom guide, I built class predictive models to indicate the edibility of a mushroom with full
-  certainty, based on a minimum number of biological traits.
-* Model selection criteria, January 2021, [GitHub](https://github.com/amishabhojwani/Functional_Response_Modelling)
-  * Given the discourse in academic literature, I analyse the boundaries of reliability for AIC and BIC as metrics for model selection between mechanistic and polynomial models.
 
 ## Publications
   <ul>{% for post in site.publications %}
