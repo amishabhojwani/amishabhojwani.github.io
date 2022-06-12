@@ -10,8 +10,7 @@ redirect_from:
 
 ## 📚 Goals
 
-I’m a quantitative researcher who has completed multiple research projects where I demonstrate my ability to wrangle, manage, analyse and visualise complex data. I am now starting off my career in Data Science where I will apply the statistical and machine learning methods I’ve learned to provide businesses with valuable insights and agile data pipelines.
-. 
+I’m a quantitative researcher who has completed multiple research projects where I demonstrate my ability to wrangle, manage, analyse and visualise complex data. I am now starting off my career in Data Science where I will apply the statistical and machine learning methods I’ve learned to provide businesses with valuable insights and agile data pipelines. 
 
 ## 👩🏻‍💻 Skills
 

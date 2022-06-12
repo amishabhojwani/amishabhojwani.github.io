@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "CV and Portfolio"
-permalink: /cv-and-portfolio/
+permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
@@ -25,7 +25,7 @@ redirect_from:
 ## Experience
 * Data Science Trainee, January 2022-Present
   * Digital Futures
-  * Duties included: undergoing intensive training to achieve industry standard workflows using tools like Python, Tableau and pgAdmin.
+  * Duties included: undergoing intensive training to achieve industry standard workflows using tools like Python, PostgreSQL, Tableau and pgAdmin.
 
 * Graduate Teaching Assistant October 2021-January 2022
   * Imperial College London
@@ -33,8 +33,7 @@ redirect_from:
 
 * Spatial Ecological Modelling Research Internship, July-September 2019
   * University of Aberdeen
-  * Duties included: Investigating modelling parameters which influence invasive species dispersal success
-  * Supervisor: Professor Justin Travis  
+  * Duties included: Investigating modelling parameters which influence invasive species dispersal success.
 
 * Salesperson, June 2015-August 2018
   * Mayachi
