@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 ## Education
-* MSc in Computational Ecology and Statistics, Imperial College London, 2020-2021
+* MSc in Computational Biology and Statistics, Imperial College London, 2020-2021
 * BSc in Environmental Biology, Autonomous University of Barcelona, 2015-2019
 
 ## Data Science Projects
@@ -33,7 +33,7 @@ redirect_from:
 
 * Spatial Ecological Modelling Research Internship, July-September 2019
   * University of Aberdeen
-  * Duties included: Investigating modelling parameters which influence invasive species dispersal success.
+  * Duties included: investigating spatial modelling parameters which influence invasive species dispersal success.
 
 * Salesperson, June 2015-August 2018
   * Mayachi
@@ -51,11 +51,13 @@ redirect_from:
   * Libraries: pandas, sklearn, statsmodels, keras, tensorflow, seaborn, matplotlib, numpy, pyspark
 * Languages
   * Spoken and written: English, Spanish, Catalan and French
-  * Spoken: Hindi and Sindhi.
+  * Spoken: Hindi and Sindhi
 
-## Leadership
-* Spanish Youth Ambassador for the Chirag Rural Development Foundation. Raised over 6,000€ with the team in Barcelona, organising events to raise money for the [Project Chirag](https://projectchirag.org/) cause both during and after the first lockdown in 2020.
+## Leadership and Certifications
+* Certified Associate in Python Programming (PCAP) by the Python Institute in May 2022.
 * Part of the Frontiers in Ecology and Evolution Symposium (2021) organisational committee at Silwood Park.
+* Spanish Youth Ambassador for the Chirag Rural Development Foundation. Raised over 6,000€ with the team in Barcelona, organising events to raise money for the [Project Chirag](https://projectchirag.org/) cause both during and after the first lockdown in 2020.
+* Awarded Best Dissertation from a Gendered Perspective in December 2019 by the Autonomous University of Barcelona.
 
 ## Publications
   <ul>{% for post in site.publications %}
