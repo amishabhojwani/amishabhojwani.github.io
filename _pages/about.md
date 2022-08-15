@@ -10,11 +10,11 @@ redirect_from:
 
 ## 📚 Goals
 
-I’m a quantitative researcher who has completed multiple projects where I demonstrate my ability to wrangle, manage, analyse and visualise complex data. I'm now starting off my career in data where I will apply the statistical and computational methods I’ve learned to provide businesses with valuable insights and agile pipelines.
+I’m a data professional and quantitative researcher who now forms part of the Business Ïnsights team at Vueling Airlines, where we leverage big data analysis and visualisation to drive high level decision-making. With this external consulting opportunity through VISEO I hope to gain more knowledge on cloud systems and big data management.
 
 ## 👩🏻‍💻 Skills
 
-My education and experience have equipped me with a variety of programmatic, statistical, and software-based tools that i am eager to put into practice to gain decision-making power from big data to drive corporate growth. To achieve this, I am currently a Data Scientist in training at [Digital Futures](https://digitalfutures.com/), who are taking an inclusive approach to bringing diverse talent into tech.
+My education and experience have equipped me with a variety of programmatic, statistical, and software-based tools. The most in demand ones are Python, SQL and Tableau. I enjoy statistical programming used for predictive modelling and I want to gain more skills in model deployment and maintenance.
 
 ## 🎹 Personal Interests
 
