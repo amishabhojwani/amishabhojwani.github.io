@@ -10,7 +10,7 @@ redirect_from:
 
 ## 📚 Goals
 
-I’m a data professional and quantitative researcher who now forms part of the Business Ïnsights team at Vueling Airlines, where we leverage big data analysis and visualisation to drive high level decision-making. With this external consulting opportunity through VISEO I hope to gain more knowledge on cloud systems and big data management.
+I’m a data professional and quantitative researcher who forms part of the Business Insights team at Vueling Airlines. I help leverage big data analysis and visualisation to drive high level decision-making. With this external consulting opportunity through [VISEO IBERIA](https://www.viseo.com/en/ela/news/viseo-iberia-main-offers-and-services) I hope to gain more knowledge on cloud systems and big data management.
 
 ## 👩🏻‍💻 Skills
 
