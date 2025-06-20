@@ -10,17 +10,13 @@ redirect_from:
 
 ## 📚 Goals
 
-I’m a data professional and quantitative researcher who forms part of the Business Insights team at Vueling Airlines. I help leverage big data analysis and visualisation to drive high level decision-making. With this external consulting opportunity through [VISEO IBERIA](https://www.viseo.com/en/ela/news/viseo-iberia-main-offers-and-services) I hope to gain more knowledge on cloud systems and big data management.
+I’m a data professional and quantitative researcher growing and contributing my skills with Thoughtworks. I help leverage big data analysis and visualisation to drive high level decision-making.
 
 ## 👩🏻‍💻 Skills
 
-My education and experience have equipped me with a variety of programmatic, statistical, and software-based tools. The most in demand ones are Python, SQL and Tableau. I enjoy statistical programming used for predictive modelling and I want to gain more skills in model deployment and maintenance.
+My current expertise surrounds data visualization and effective dashboarding (**Tableau**), including gathering requirements and using agile methodology to continuously improve deliverables. I am also skilled in descriptive and predictive statistical methods, having a keen interest in the intersection between dimensionality reduction and clustering methods. To implement this knowledge I count on programming languages like **Python** or **R**, and couple them with big data using **SQL**.
 
 ## 🎹 Personal Interests
 
 I am interested in sustainability and enjoy playing the piano, hiking and scuba diving. I also like photography and going to live music events.
-
-## 📂 Current pet project
-
-My passion for music has made me an avid reader of [Pitchfork](https://pitchfork.com/)'s music reviews. I want to investigate how their choice in reviewed music has changed over the years, and if there are any musical spheres (topics) that have interesting dynamics over time. For this, I am web-scraping their end of year lists since the year 2000 and will report summary analytics of my findings.
 
