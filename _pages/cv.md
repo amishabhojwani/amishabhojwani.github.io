@@ -10,7 +10,10 @@ redirect_from:
 {% include base_path %}
 
 ## Experience
-* Business Intelligence Consultant, August 2022-Present
+* Senior Data Analysis Consultant, June 2025-Present
+  * Thoughtworks
+ 
+* Business Intelligence Consultant, August 2022-May 2025
   * VISEO IBERIA
   * Duties include: Tableau and data analytics consultant for Vueling Airlines.
 
