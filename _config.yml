@@ -10,7 +10,7 @@ locale                   : "en-GB"
 title                    : "Home"
 title_separator          : "-"
 name                     : &name "Amisha Bhojwani"
-description              : &description "Business Insights and Data Analytics at VISEO IBERIA"
+description              : &description "Data Analysis at Thoughtworks"
 url                      : https://amishabhojwani.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "amishabhojwani/amishabhojwani.github.io"
@@ -87,7 +87,7 @@ author:
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=EHW-PPMAAAAJ&hl=en&oi=ao"
-  email            : amishabhojwani[at]gmail[dot]com
+  email            : 
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -106,10 +106,10 @@ author:
   orcid            : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : "23979059/amisha-bhojwani"
+  stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : amishabhojwani
+  twitter          : 
   vine             :
   weibo            :
   xing             :
